@@ -61,6 +61,8 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
   Plug 'iamcco/git-p.nvim'
 
+  " Search 
+  Plug 'dyng/ctrlsf.vim'
 call plug#end()
 
 set t_Co=256                " Habilita suporte completo a cores no Vim
@@ -270,3 +272,20 @@ nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
 "let g:vimspector_enable_mappings = 'HUMAN'
 "autocmd FileType java nmap <leader>dd :CocCommand java.debug.vimspector.start<CR>
+"
+
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+
+" Buffer navigation
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bl :blast<CR>
+nnoremap <leader>bf :bfirst<CR>
