@@ -7,7 +7,7 @@ call plug#begin("~/.config/nvim/plugged")
 
   " Language Client
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json',  'coc-eslint', 'coc-prettier', 'coc-tsserver']
+  let g:coc_global_extensions = ['coc-db', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json',  'coc-eslint', 'coc-prettier', 'coc-tsserver']
   
   " Highlighting
   Plug 'pangloss/vim-javascript'
@@ -63,6 +63,15 @@ call plug#begin("~/.config/nvim/plugged")
 
   " Search 
   Plug 'dyng/ctrlsf.vim'
+
+
+  " SQL Editor
+  Plug 'tpope/vim-dadbod'
+  Plug 'kristijanhusak/vim-dadbod-ui'
+
+  " DOTENV
+  Plug 'tpope/vim-dotenv'
+
 call plug#end()
 
 set t_Co=256                " Habilita suporte completo a cores no Vim
@@ -289,3 +298,24 @@ nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bl :blast<CR>
 nnoremap <leader>bf :bfirst<CR>
+
+
+" SQL Editor
+
+let g:db_ui_icons = {
+    \ 'expanded': '▾',
+    \ 'collapsed': '▸',
+    \ 'saved_query': '*',
+    \ 'new_query': '+',
+    \ 'tables': '~',
+    \ 'buffers': '»',
+    \ 'connection_ok': '✓',
+    \ 'connection_error': '✕',
+    \ }
+
+let g:db_ui_table_helpers = {
+\   'mysql': {
+\     'Count': 'select count(*) from {table};',
+\     'First': 'select * from {table} limit 1;'
+\   }
+\ }
