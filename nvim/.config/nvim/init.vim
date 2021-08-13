@@ -301,17 +301,42 @@ nnoremap <leader>bf :bfirst<CR>
 
 
 " SQL Editor
+nmap <leader>e <Plug>(DBUI_ExecuteQuery)<CR>
+nmap <leader>d :DBUIToggle<CR>
 
-let g:db_ui_icons = {
-    \ 'expanded': '▾',
-    \ 'collapsed': '▸',
-    \ 'saved_query': '*',
-    \ 'new_query': '+',
-    \ 'tables': '~',
-    \ 'buffers': '»',
-    \ 'connection_ok': '✓',
-    \ 'connection_error': '✕',
-    \ }
+let g:db_ui_auto_execute_table_helpers = 0 
+let g:db_ui_execute_on_save = 0
+let g:db_ui_use_nerd_fonts = 1
+let g:db_ui_win_position = 'right'
+let g:db_ui_save_location = '~/queries/'
+
+let g:db_ui_icons =  {
+\  'expanded': {
+\    'db': '▾ ',
+\    'buffers': '▾ ',
+\    'saved_queries': '▾ ',
+\    'schemas': '▾ ',
+\    'schema': '▾ פּ',
+\    'tables': '▾ 藺',
+\    'table': '▾ ',
+\  },
+\  'collapsed': {
+\    'db': '▸ ',
+\    'buffers': '▸ ',
+\    'saved_queries': '▸ ',
+\    'schemas': '▸ ',
+\    'schema': '▸ פּ',
+\    'tables': '▸ 藺',
+\    'table': '▸ ',
+\  },
+\  'saved_query': '',
+\  'new_query': '璘',
+\  'tables': '離',
+\  'buffers': '﬘',
+\  'add_connection': '',
+\  'connection_ok': '✓',
+\  'connection_error': '✕',
+\}
 
 let g:db_ui_table_helpers = {
 \   'mysql': {
@@ -319,3 +344,4 @@ let g:db_ui_table_helpers = {
 \     'First': 'select * from {table} limit 1;'
 \   }
 \ }
+
