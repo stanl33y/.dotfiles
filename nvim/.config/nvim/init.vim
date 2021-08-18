@@ -7,7 +7,7 @@ call plug#begin("~/.config/nvim/plugged")
 
   " Language Client
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  let g:coc_global_extensions = ['coc-db', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json',  'coc-eslint', 'coc-prettier', 'coc-tsserver']
+  let g:coc_global_extensions = ['coc-db', 'coc-omnisharp', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json',  'coc-eslint', 'coc-prettier', 'coc-tsserver']
   
   " Highlighting
   Plug 'pangloss/vim-javascript'
@@ -33,7 +33,8 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'ryanoasis/vim-devicons'
- 
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
   " Commenter
   Plug 'preservim/nerdcommenter'
 
@@ -302,7 +303,7 @@ nnoremap <leader>bf :bfirst<CR>
 
 " SQL Editor
 nmap <leader>e <Plug>(DBUI_ExecuteQuery)<CR>
-nmap <leader>d :DBUIToggle<CR>
+" nmap <leader>d :DBUIToggle<CR>
 
 let g:db_ui_auto_execute_table_helpers = 0 
 let g:db_ui_execute_on_save = 0
