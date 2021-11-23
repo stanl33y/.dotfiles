@@ -192,7 +192,7 @@ bindsym $mod+Shift+F6 exec "playerctl previous"
 bindsym XF86AudioLowerVolume exec "amixer -q sset Master 3%- unmute"
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 3%+ unmute"
 
-exec --no-startup-id picom
+#exec --no-startup-id picom
 #exec --no-startup-id xfce4-panel -disable-wm-check
 
-exec --no-startup-id /home/stan/.screenlayout/dell.sh
+#exec --no-startup-id /home/stan/.screenlayout/dell.sh

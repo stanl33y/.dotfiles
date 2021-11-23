@@ -11,11 +11,9 @@ call plug#begin("~/.config/nvim/plugged")
   
   " Highlighting
   Plug 'pangloss/vim-javascript'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql' 
-  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'mxw/vim-jsx'
 
   " Autoindent
   Plug 'sheerun/vim-polyglot'
@@ -72,7 +70,9 @@ call plug#begin("~/.config/nvim/plugged")
 
   " DOTENV
   Plug 'tpope/vim-dotenv'
-
+  
+  " JSDOC Generator
+  Plug 'heavenshell/vim-jsdoc'
 call plug#end()
 
 set t_Co=256                " Habilita suporte completo a cores no Vim
@@ -98,7 +98,7 @@ set hidden                  " permite editar outros arquivos sem salvar um antes
 set nowrap                  " Não quebrar linhas por padrão. Para definir quebra de linha, só entrar no arquivo e digitar :set wrap
 set clipboard+=unnamedplus  " Permite copiar do clipboard para o vim e do vim para o clipboad
 " set undofile                " Salva automaticamente um histórico de ações para desfazer, ainda que o vim seja fechado
-set list                    " Habilita a exibição de caracteres ocultos
+" set list                    " Habilita a exibição de caracteres ocultos
 " Define como os símbolos ocultos serão representados
 set listchars=tab:▸\
 set listchars+=trail:·
@@ -113,13 +113,11 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-
-
 " ####################################################
 " Theme
 " ####################################################
 let g:dracula_colorterm = 0
-colorscheme dracula
+colorscheme dracula_pro
 
 " ####################################################
 " NERDTree
@@ -159,7 +157,7 @@ function! CocCurrentFunction()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'dracula_pro',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'currentfunction', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -170,17 +168,6 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
-
-"let g:lightline = {
-      "\ 'colorscheme': 'dracula',
-      "\ 'active': {
-      "\   'left': [ [ 'mode', 'paste' ],
-      "\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      "\ },
-      "\ 'component_function': {
-      "\   'gitbranch': 'FugitiveHead'
-      "\ },
-      "\ }
 
 " ####################################################
 " Code Completions 
