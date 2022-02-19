@@ -45,7 +45,7 @@ call plug#begin("~/.config/nvim/plugged")
   
   "GIT
   Plug 'tpope/vim-fugitive'
-  
+ 
   " Suporte para smooth scrolling
   Plug 'yuttie/comfortable-motion.vim'
 
@@ -73,6 +73,9 @@ call plug#begin("~/.config/nvim/plugged")
   
   " JSDOC Generator
   Plug 'heavenshell/vim-jsdoc'
+
+  " Easymotion 
+  Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 set t_Co=256                " Habilita suporte completo a cores no Vim
@@ -333,3 +336,20 @@ let g:db_ui_table_helpers = {
 \   }
 \ }
 
+"Easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)

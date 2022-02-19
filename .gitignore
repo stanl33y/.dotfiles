@@ -1,2 +1,5 @@
 tmux/.tmuxinator/gestcom.yml
-/nvim/.config/nvim/plugged
+tmux/plugins
+nvim/.config/nvim/plugged
+nvim/.config/nvim/autoload
+
