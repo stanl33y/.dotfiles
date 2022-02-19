@@ -4,19 +4,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
   
-export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export ZSH=$HOME/.zsh
 source $ZSH/oh-my-zsh/oh-my-zsh.sh
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh 
+source $ZSH/p10k/p10k.zsh
+source $ZSH/p10k/powerlevel10k/powerlevel10k.zsh-theme
 
-# clipboard
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-
-ZSH_THEME="dracul33"
+#ZSH_THEME="dracul33"
 
 plugins=(
   git
@@ -26,14 +22,12 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-
 ZSH_TMUX_AUTOSTART=true
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
 # FZF
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='~~'
 
@@ -73,3 +67,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'--color=dark --color=fg:-1,bg:-1,hl:#5
 
 alias arch='distrobox enter arch'
 alias ubuntu='distrobox enter ubuntu'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
