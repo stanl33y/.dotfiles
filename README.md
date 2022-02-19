@@ -8,14 +8,14 @@ requires GNU Stow https://www.gnu.org/software/stow/ and ZSH
 
 ## How to use
 ```sh
-git clone --depth 1 https://github.com/stanl33y/dotfiles.git ~/.dotfiles
+git clone --depth 1 https://github.com/stanl33y/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles && make install
 ```
-# How to update
+## How to update
 ```sh
 cd ~/.dotfiles && make update
 ```
-# How to remove
+## How to remove
 ```sh
 cd ~/.dotfiles && make remove
 ```
