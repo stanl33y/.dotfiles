@@ -1,5 +1,5 @@
 [submodule ".fzf"]
-	path = .fzf 
+	path = fzf/.fzf 
 	url = https://github.com/junegunn/fzf.git
 [submodule "asdf/.asdf"]
 	path = asdf/.asdf
