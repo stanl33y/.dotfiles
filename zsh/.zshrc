@@ -7,14 +7,16 @@ fi
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.zsh
+source $ZSH/oh-my-zsh/oh-my-zsh.sh
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh 
 
 # clipboard
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
-ZSH_THEME="dracula-pro"
+ZSH_THEME="dracul33"
 
 plugins=(
   git
@@ -24,7 +26,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
 
 ZSH_TMUX_AUTOSTART=true
 
@@ -33,7 +34,6 @@ ZSH_TMUX_AUTOSTART=true
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # FZF
-#[ -f ~/.config/zsh/fzf/.fzf.zsh ] && source ~/.config/zsh/fzf/.fzf.zsh
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='~~'
 
