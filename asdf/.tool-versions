@@ -10,3 +10,4 @@ tmux 3.2
 python 3.10.2
 tokei 12.1.2
 ctop 0.7.6
+fzf 0.29.0
