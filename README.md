@@ -8,7 +8,7 @@ requires GNU Stow https://www.gnu.org/software/stow/ and ZSH
 
 ## How to use
 ```sh
-git clone --depth 1 https://github.com/stanl33y/.dotfiles.git ~/.dotfiles
+git clone --depth 1 --recursive https://github.com/stanl33y/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles && make install
 ```
 ## How to update
