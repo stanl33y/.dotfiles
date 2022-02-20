@@ -5,16 +5,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
   
 
-export ZSH=$HOME/.zsh
-source $ZSH/oh-my-zsh/oh-my-zsh.sh
-source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
-source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh 
-source $ZSH/p10k/p10k.zsh
-source $ZSH/p10k/powerlevel10k/powerlevel10k.zsh-theme
-source $ZSH/fzf/shell/completion.zsh
-source $ZSH/fzf/shell/key-bindings.zsh
+export DOTZSH=$HOME/.zsh
+export ZSH=$DOTZSH/oh-my-zsh
 
-export PATH="${PATH:+${PATH}:}$ZSH/fzf/bin"
+source $DOTZSH/oh-my-zsh/oh-my-zsh.sh
+source $DOTZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source $DOTZSH/zsh-autosuggestions/zsh-autosuggestions.zsh 
+source $DOTZSH/p10k/p10k.zsh
+source $DOTZSH/p10k/powerlevel10k/powerlevel10k.zsh-theme
+source $DOTZSH/fzf/shell/completion.zsh
+source $DOTZSH/fzf/shell/key-bindings.zsh
+
+export PATH="${PATH:+${PATH}:}$DOTZSH/fzf/bin"
 
 #ZSH_THEME="dracul33"
 
