@@ -11,6 +11,10 @@ source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh 
 source $ZSH/p10k/p10k.zsh
 source $ZSH/p10k/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSH/fzf/shell/completion.zsh
+source $ZSH/fzf/shell/key-bindings.zsh
+
+export PATH="${PATH:+${PATH}:}$ZSH/fzf/bin"
 
 #ZSH_THEME="dracul33"
 
