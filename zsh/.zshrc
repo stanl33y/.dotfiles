@@ -18,7 +18,7 @@ source $DOTZSH/fzf/shell/key-bindings.zsh
 
 export PATH="${PATH:+${PATH}:}$DOTZSH/fzf/bin"
 
-#ZSH_THEME="dracul33"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   git
