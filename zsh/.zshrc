@@ -1,4 +1,4 @@
-. $HOME/.asdf/asdf.sh
+#. $HOME/.asdf/asdf.sh
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -7,6 +7,8 @@ fi
 
 export DOTZSH=$HOME/.zsh
 export ZSH=$DOTZSH/oh-my-zsh
+export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="${PATH:+${PATH}:}$DOTZSH/fzf/bin"
 
 source $DOTZSH/oh-my-zsh/oh-my-zsh.sh
 source $DOTZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
@@ -16,9 +18,7 @@ source $DOTZSH/p10k/powerlevel10k/powerlevel10k.zsh-theme
 source $DOTZSH/fzf/shell/completion.zsh
 source $DOTZSH/fzf/shell/key-bindings.zsh
 
-export PATH="${PATH:+${PATH}:}$DOTZSH/fzf/bin"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   git

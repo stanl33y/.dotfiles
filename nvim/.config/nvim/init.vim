@@ -7,7 +7,7 @@ call plug#begin("~/.config/nvim/plugged")
 
   " Language Client
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  let g:coc_global_extensions = ['coc-db', 'coc-omnisharp', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json',  'coc-eslint', 'coc-prettier', 'coc-tsserver']
+  let g:coc_global_extensions = ['coc-db', 'coc-omnisharp', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json',  'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-yaml']
   
   " Highlighting
   Plug 'pangloss/vim-javascript'
@@ -57,8 +57,11 @@ call plug#begin("~/.config/nvim/plugged")
   Plug 'szw/vim-maximizer'
 
   " Git Blamer
-  Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
-  Plug 'iamcco/git-p.nvim'
+  Plug 'f-person/git-blame.nvim'
+
+  " Plug 'iamcco/sran.nvim', { 'do': { -> sran#util#install() } }
+  " Plug 'iamcco/sran.nvim', { 'do': 'yarn' }
+  " Plug 'iamcco/git-p.nvim'
 
   " Search 
   Plug 'dyng/ctrlsf.vim'
@@ -206,7 +209,7 @@ tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
+  nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
@@ -226,22 +229,29 @@ nnoremap <silent> <Leader>v :tabe $MYVIMRC<cr>
 nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 
 " Git Blamer
-let g:gitp_blame_virtual_text = 1
-highlight link GitPBlameLine GitPBlameLineHi
-let g:gitp_blame_format = '    %{account}, %{ago} * %{commit}'
-highlight link GitPAdd                GitPAddHi
-highlight link GitPModify             GitPModifyHi
-highlight link GitPDeleteTop          GitPDeleteHi
-highlight link GitPDeleteBottom       GitPDeleteHi
-highlight link GitPDeleteTopAndBottom GitPDeleteHi
-let g:gitp_add_sign = '■'
-let g:gitp_modify_sign = '▣'
-let g:gitp_delete_top_sign = '▤'
-let g:gitp_delete_bottom_sign = '▤'
-let g:gitp_delete_top_and_bottom_sign = '▤'
-nmap <leader>d <Plug>(git-p-diff-preview)
-nmap <leader>s <Plug>(git-p-show-blame)
-highlight link GitPDiffFloat Pmenu
+"let g:gitp_blame_virtual_text = 1
+
+"highlight link GitPBlameLine GitPBlameLineHi
+
+"let g:gitp_blame_format = '    %{account}, %{ago} * %{commit}'
+
+"highlight link GitPAdd                GitPAddHi
+"highlight link GitPModify             GitPModifyHi
+"highlight link GitPDeleteTop          GitPDeleteHi
+"highlight link GitPDeleteBottom       GitPDeleteHi
+"highlight link GitPDeleteTopAndBottom GitPDeleteHi
+
+"" use custom diff sign
+"let g:gitp_add_sign = '■'
+"let g:gitp_modify_sign = '▣'
+"let g:gitp_delete_top_sign = '▤'
+"let g:gitp_delete_bottom_sign = '▤'
+"let g:gitp_delete_top_and_bottom_sign = '▤'
+
+"nmap <leader>d <Plug>(git-p-diff-preview)
+"nmap <leader>s <Plug>(git-p-show-blame)
+"highlight link GitPDiffFloat Pmenu
+
 
 fun GotoWindow(id)
   call win_gotoid(a:id)
